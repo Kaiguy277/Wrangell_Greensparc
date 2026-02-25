@@ -5,7 +5,7 @@
 __pycache__/
 *.pyc
 
-# Other projects (not part of Wrangell/GreenSparc)
+# Other projects (not part of Wrangell/Greensparc)
 cordova_*.png
 cordova_*.ipynb
 stranded_energy*.png

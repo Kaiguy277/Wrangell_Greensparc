@@ -1,8 +1,8 @@
 # ─────────────────────────────────────────────────────────────────────────────
-# Wrangell Energy Future | GreenSparc Anchor Customer Explorer
+# Wrangell Energy Future | Greensparc Anchor Customer Explorer
 #
 # Story: SEAPA's Tyee Lake hydro is maxed out. Wrangell load is growing fast
-# from heat pump adoption. The system needs a $20M 3rd turbine. A GreenSparc
+# from heat pump adoption. The system needs a $20M 3rd turbine. A Greensparc
 # data-center anchor customer can make that expansion financeable — and drive
 # community rates below today's level. This tool shows how.
 #
@@ -26,7 +26,7 @@ from plotly.subplots import make_subplots
 # ═════════════════════════════════════════════════════════════════════════════
 
 st.set_page_config(
-    page_title="Wrangell Energy Future | GreenSparc",
+    page_title="Wrangell Energy Future | Greensparc",
     page_icon="⚡",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -226,7 +226,7 @@ def narr_rate(scenarios, params, target_yr=2030):
         f"**{da:+.1f}%** by {yr} under the Status Quo. "
         f"The expansion alone provides rate stability but adds **{fmt_dollar_md(params['debt_service_yr'])}/year** "
         f"in capital charges to Wrangell ratepayers. "
-        f"GreenSparc's anchor tariff generates **{fmt_dollar_md(margin_yr)}/year** above SEAPA cost, "
+        f"Greensparc's anchor tariff generates **{fmt_dollar_md(margin_yr)}/year** above SEAPA cost, "
         f"covering **{cov:.0f}%** of that debt service. "
         f"By {yr}, Wrangell residents under Scenario C pay "
         f"**{rc*100:.2f}¢/kWh** — "
@@ -333,7 +333,8 @@ def chart_rate_trajectory(scenarios, base_rate, expansion_yr):
     dashes = {"A": "dash", "B": "solid", "C": "solid"}
     widths = {"A": 2, "B": 2, "C": 3}
 
-    for key in ["A", "B", "C"]:
+    # Draw C first, A last so Status Quo line stays visible until scenarios split
+    for key in ["C", "B", "A"]:
         df  = scenarios[key]
         fig.add_trace(go.Scatter(
             x=YEARS,
@@ -726,12 +727,12 @@ def render_sidebar() -> dict:
 
     # ── Anchor Customer ──────────────────────────────────────────────────────
     st.sidebar.markdown("---")
-    st.sidebar.subheader("🏭 GreenSparc Anchor Customer")
+    st.sidebar.subheader("🏭 Greensparc Anchor Customer")
     st.sidebar.caption("Scenario C only. Anchor comes online with the expansion (same year).")
 
     anchor_mw = st.sidebar.slider(
         "Anchor nameplate load (MW)", 0.5, 5.0, 2.0, 0.1,
-        help="DEFAULT SOURCE: GreenSparc data-center sizing assumption.\n\n"
+        help="DEFAULT SOURCE: Greensparc data-center sizing assumption.\n\n"
              "MODEL EFFECT: Combined with capacity factor, determines annual anchor "
              "energy demand and revenue. Larger anchors generate more tariff revenue "
              "but consume more of the new hydro capacity.",
@@ -861,7 +862,7 @@ def main():
     st.markdown(
         "**SEAPA's Tyee Lake hydro is maxed out.** Wrangell's load grew +19% in four years "
         "from heat pump adoption and has no more cheap hydro headroom. The fix — a third "
-        "turbine — costs ~$20M. A GreenSparc data-center anchor customer can make that "
+        "turbine — costs ~$20M. A Greensparc data-center anchor customer can make that "
         "expansion financeable while driving community rates **below today's level**."
     )
 

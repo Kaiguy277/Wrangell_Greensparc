@@ -1,6 +1,6 @@
 # AKEnergy — Wrangell Anchor Customer Explorer: Platform Log
 
-**Project:** GreenSparc Anchor Customer Impact Explorer — Wrangell, Alaska
+**Project:** Greensparc Anchor Customer Impact Explorer — Wrangell, Alaska
 **File:** `streamlit_app.py`
 **Last updated:** 2026-02-19
 **Status:** MVP / Demo-ready
@@ -9,7 +9,7 @@
 
 ## 1. Purpose
 
-A single-page Streamlit web application for exploring the economic case for a GreenSparc small-scale data center in Wrangell, Alaska. The core argument: Wrangell's power supply (SEAPA Tyee Lake hydro) is near its capacity ceiling due to rapid load growth from heat pump adoption. The system needs a ~$20M third turbine. A GreenSparc anchor customer can provide the guaranteed offtake revenue that makes that expansion financeable — and can drive community retail rates *below* their current level.
+A single-page Streamlit web application for exploring the economic case for a Greensparc small-scale data center in Wrangell, Alaska. The core argument: Wrangell's power supply (SEAPA Tyee Lake hydro) is near its capacity ceiling due to rapid load growth from heat pump adoption. The system needs a ~$20M third turbine. A Greensparc anchor customer can provide the guaranteed offtake revenue that makes that expansion financeable — and can drive community retail rates *below* their current level.
 
 The app is designed for use in stakeholder meetings, policy conversations, and project development discussions. It is a scenario-planning tool, not a rate-case model.
 
@@ -21,7 +21,7 @@ The app is designed for use in stakeholder meetings, policy conversations, and p
 |---|---|---|
 | 🔴 **Status Quo** | No expansion, no anchor. Load grows, diesel fills gap. | Rates rise ~22% by 2035 |
 | 🟡 **Expansion Only** | SEAPA 3rd turbine built; full capital cost on ratepayers. | Rates roughly flat; capital burden on community |
-| 🟢 **Expansion + Anchor** | 3rd turbine + GreenSparc anchor. Anchor margin covers ~75%+ of Wrangell's debt share. | Rates fall ~5% below today by 2030 |
+| 🟢 **Expansion + Anchor** | 3rd turbine + Greensparc anchor. Anchor margin covers ~75%+ of Wrangell's debt share. | Rates fall ~5% below today by 2030 |
 
 ---
 

@@ -107,7 +107,7 @@ def build_pdf():
     pdf.ln(2)
     pdf.set_font(FONT, "", 18)
     pdf.set_text_color(*ACCENT)
-    pdf.cell(0, 10, "GreenSparc Anchor Customer Explorer", align="C", new_x="LMARGIN", new_y="NEXT")
+    pdf.cell(0, 10, "Greensparc Anchor Customer Explorer", align="C", new_x="LMARGIN", new_y="NEXT")
     pdf.ln(6)
     pdf.set_font(FONT, "", 13)
     pdf.set_text_color(*GRAY)
@@ -128,7 +128,7 @@ def build_pdf():
     pdf.multi_cell(0, 5.5,
         "SEAPA's Tyee Lake hydropower is at capacity. Wrangell's electricity load is growing "
         "fast from heat-pump adoption, forcing increasing reliance on expensive diesel generation. "
-        "A third turbine (~$20M) is needed. This interactive model explores whether a GreenSparc "
+        "A third turbine (~$20M) is needed. This interactive model explores whether a Greensparc "
         "data-center anchor customer can make that expansion financeable — and drive community "
         "electricity rates below today's level.\n\n"
         "This document describes every adjustable parameter in the model sidebar, where each "
@@ -190,7 +190,7 @@ def build_pdf():
     pdf.sub_title("Sidebar (left)")
     pdf.body_text(
         "Contains all 23 adjustable parameters organized into collapsible sections: "
-        "Wrangell System, Load Growth, SEAPA Expansion, GreenSparc Anchor Customer, and Community Baseline. "
+        "Wrangell System, Load Growth, SEAPA Expansion, Greensparc Anchor Customer, and Community Baseline. "
         "Change any slider or input and the model recalculates instantly."
     )
     pdf.sub_title("Main Panel (right)")
@@ -281,7 +281,7 @@ def build_pdf():
          "Longer terms reduce annual payments but increase total interest paid."),
 
         ("Anchor Customer", "Nameplate Load", "2.0 MW", "0.5-5.0",
-         "GreenSparc data-center sizing",
+         "Greensparc data-center sizing",
          "Combined with capacity factor, determines annual anchor demand and revenue. Larger = more revenue but more hydro consumed."),
 
         ("Anchor Customer", "Capacity Factor", "0.90", "0.70-0.99",
