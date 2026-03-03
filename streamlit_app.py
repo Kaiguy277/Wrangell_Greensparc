@@ -16,6 +16,8 @@
 #   • Wholesale rate: back-calculated from 2023 EIA-861 actuals
 # ─────────────────────────────────────────────────────────────────────────────
 
+from pathlib import Path
+
 import streamlit as st
 import pandas as pd
 
@@ -141,12 +143,23 @@ def main():
 
     # ── PDF Export ────────────────────────────────────────────────────────
     pdf_bytes = generate_scenario_pdf(params, scenarios, community_name)
-    st.download_button(
-        label="📄 Download Scenario PDF",
-        data=pdf_bytes,
-        file_name=f"{community_name.lower()}_scenario_{params['anchor_mw']:.1f}MW.pdf",
-        mime="application/pdf",
-    )
+    dl1, dl2 = st.columns(2)
+    with dl1:
+        st.download_button(
+            label="📄 Download Scenario PDF",
+            data=pdf_bytes,
+            file_name=f"{community_name.lower()}_scenario_{params['anchor_mw']:.1f}MW.pdf",
+            mime="application/pdf",
+        )
+    with dl2:
+        guide_path = Path(__file__).parent / "Wrangell_Energy_Model_Guide.pdf"
+        if guide_path.exists():
+            st.download_button(
+                label="📘 Download Model Guide",
+                data=guide_path.read_bytes(),
+                file_name="Wrangell_Energy_Model_Guide.pdf",
+                mime="application/pdf",
+            )
 
     # ── 2030 rate outlook cards ──────────────────────────────────────────
     st.markdown("#### 2030 Rate Outlook by Scenario")

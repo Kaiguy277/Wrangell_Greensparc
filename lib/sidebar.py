@@ -5,7 +5,7 @@
 import streamlit as st
 
 from lib.financial import annual_debt_service, anchor_capex_coverage, fmt_dollar_md
-from lib.communities import COMMUNITY_CONFIGS, get_community_names
+from lib.communities import COMMUNITY_CONFIGS
 
 
 def render_sidebar() -> dict:
@@ -13,13 +13,8 @@ def render_sidebar() -> dict:
 
     st.sidebar.title("⚡ Model Parameters")
 
-    # ── Community selector ─────────────────────────────────────────────────
-    community_names = get_community_names()
-    community_key = st.sidebar.selectbox(
-        "Community",
-        list(community_names.keys()),
-        format_func=lambda k: community_names[k],
-    )
+    # ── Community config ─────────────────────────────────────────────────
+    community_key = "wrangell"
     config = COMMUNITY_CONFIGS[community_key]
     d = config["defaults"]  # shorthand for default values
 
